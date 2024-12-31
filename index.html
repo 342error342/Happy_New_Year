@@ -1,0 +1,482 @@
+<!--<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>открытка</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding-top: 50px;
+            overflow-x: hidden;
+        }
+
+        .postcard-container {
+            position: relative;
+            transition: transform 1s ease-in-out, scale 0.5s ease-in-out;
+            transform-origin: center left;
+            top: 50px;
+            left: 0;
+        }
+
+            .postcard-container.open {
+                scale: 1.2;
+                transform: translateX(175px); /* Смещаем влево после открытия */
+            }
+
+        .postcard-top {
+            width: 450px;
+            height: 450px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 1s ease-in-out;
+            transform-origin: left center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .postcard-top.closed {
+                transform: rotateY(0deg);
+            }
+
+            .postcard-top.open {
+                transform: rotateY(-180deg);
+            }
+
+        .front, .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            backface-visibility: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            text-align: center;
+            background-color: inherit;
+        }
+
+            .front p, .back p {
+                margin-bottom: 10px;
+            }
+
+        .front {
+            background-color: #eee;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .front-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .front-content img {
+                max-width: 80%;
+                height: auto;
+                margin-top: 10px;
+            }
+
+        .front-signature {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 10px; /* Уменьшаем размер шрифта */
+            font-weight: normal;
+        }
+
+        .back {
+            background-color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .postcard-bottom {
+            width: 450px;
+            height: 450px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            text-align: center;
+            position: relative;
+            top: 0;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="postcard-container">
+        <div class="postcard-top closed" id="postcardTop">
+            <div class="front">
+                <div class="front-content">
+                    Просто включи звук)
+                    <img src="i.webp" alt="Описание картинки">
+                </div>
+                <div class="front-signature">by kritisch_irrtum</div>
+            </div>
+            <div class="back">
+                <p>Поздравляю!</p>
+                <p>Желаю всего самого наилучшего.</p>
+                <p>Пусть каждый день приносит радость.</p>
+                <p>И исполняются все мечты.</p>
+                <p>С наилучшими пожеланиями!</p>
+
+            </div>
+        </div>
+        <div class="postcard-bottom">
+            <p>С Новым годом!</p>
+            <p>Пусть этот волшебный праздник, окутанный ароматом ели и мерцанием огней, ворвется в ваш дом с вихрем радости и надежд! </p>
+            <p>Вот и подходит к концу еще один год…</p>
+            <p>Время, когда мы оглядываемся назад, вспоминая все, что было: и радостные моменты, согревающие душу, и трудности, которые сделали нас сильнее. </p>
+
+            <p>
+
+            </p>
+
+            <p>И вот, с трепетом в сердце, мы переступаем порог нового, неизведанного года.</p>
+            <p>Пусть этот переход будет для вас символом новых начинаний, свежих возможностей и веры в лучшее.</p>
+
+            <p>
+
+            </p>
+
+            <p>От всей души желаю, чтобы наступающий год распахнул перед вами двери к новым горизонтам, полным удивительных открытий и перспектив. </p>
+            <p>Пусть крепкое здоровье будет вашим верным спутником на протяжении всего года, оберегая от невзгод и даруя силы для свершений.</p>
+            <p>Пусть каждый день будет наполнен маленькими и большими радостями, яркими улыбками и моментами истинного счастья, которые будут согревать вас даже в самые пасмурные дни.</p>
+            <p>
+
+            </p>
+            <p>Желаю, чтобы ваши самые смелые мечты и сокровенные желания обрели реальность, как по волшебству.</p>
+            <p>Пусть на пути к целям вас сопровождает удача, а упорство и целеустремленность приведут к заслуженным победам.</p>
+            <p>Пусть рядом всегда будут дорогие сердцу люди, готовые разделить с вами и радость побед, и горечь неудач.</p>
+            <p>Цените эти связи, ведь именно они делают нашу жизнь богаче и полнее.</p>
+
+            <p>
+
+            </p>
+
+            <p>Пусть Новый год откроет перед вами двери к новым знаниям, интересным проектам и смелым мечтам. </p>
+            <p> Не бойтесь ставить перед собой высокие цели и стремиться к их достижению! </p>
+            <p>Пусть вдохновение станет вашим постоянным спутником, а креативные идеи бьют ключом. </p>
+            <p>
+
+            </p>
+            <p>Желаю, чтобы в вашем доме царили мир и согласие, а в душе - спокойствие и гармония.  </p>
+            <p> Пусть каждый рассвет нового года приносит с собой новые надежды, а каждый закат дарит умиротворение и благодарность за прожитый день. </p>
+            <p>
+
+            </p>
+            <p>И пусть наступающий год станет для вас годом реализации самых смелых планов, годом любви, вдохновения и незабываемых впечатлений! </p>
+            <p> С Новым годом!</p>
+
+        </div>
+    </div>
+
+    <audio id="music" src="Wham_-_Last_Christmas.mp3"></audio>
+
+    <script>
+        const postcardTop = document.getElementById('postcardTop');
+        const postcardContainer = document.querySelector('.postcard-container');
+        const music = document.getElementById('music');
+        let isOpen = false;
+
+        postcardTop.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                postcardTop.classList.remove('closed');
+                postcardTop.classList.add('open');
+                postcardContainer.classList.add('open');
+                music.play();
+            } else {
+                postcardTop.classList.remove('open');
+                postcardTop.classList.add('closed');
+                postcardContainer.classList.remove('open');
+                music.pause();
+                music.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>-->
+
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>открытка</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding-top: 50px;
+            overflow-x: hidden;
+            position: relative; /* Необходимо для позиционирования псевдоэлемента */
+        }
+
+            body::before {
+                content: "";
+                position: fixed; /* Фиксированное положение, чтобы не скроллился */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('snow.gif'); /* Замените на путь к вашему GIF */
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                z-index: -1; /* Помещаем фон позади всего контента */
+            }
+
+        /* Остальные стили без изменений */
+        .postcard-container {
+            position: relative;
+            transition: transform 1s ease-in-out, scale 0.5s ease-in-out;
+            transform-origin: center left;
+            top: 50px;
+            left: 0;
+        }
+
+            .postcard-container.open {
+                scale: 1.2;
+                transform: translateX(175px); /* Смещаем влево после открытия */
+            }
+
+        .postcard-top {
+            width: 450px;
+            height: 450px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 1s ease-in-out;
+            transform-origin: left center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .postcard-top.closed {
+                transform: rotateY(0deg);
+            }
+
+            .postcard-top.open {
+                transform: rotateY(-180deg);
+            }
+
+        .front, .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            backface-visibility: hidden;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            text-align: center;
+            background-color: inherit;
+        }
+
+            .front p, .back p {
+                margin-bottom: 10px;
+            }
+
+        .front {
+            background-color: #eee;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .front-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .front-content img {
+                max-width: 100%;
+                height: auto;
+                margin-top: 10px;
+            }
+
+        .front-signature {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 10px; /* Уменьшаем размер шрифта */
+            font-weight: normal;
+        }
+
+        .back {
+            background-color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .postcard-bottom {
+            width: 450px;
+            height: 450px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            text-align: center;
+            position: relative;
+            top: 0;
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="postcard-container">
+        <div class="postcard-top closed" id="postcardTop">
+            <div class="front">
+                <div class="front-content">
+                    Просто включи звук)
+                    <img src="i.webp" alt="Описание картинки">
+                </div>
+                <div class="front-signature">by kritisch_irrtum</div>
+            </div>
+            <div class="back">
+                <p>
+
+                </p>
+                <p>
+
+                </p>
+
+                <p>Поздравляю!</p>
+                <p>Желаю всего самого наилучшего.</p>
+                <p>Пусть каждый день приносит радость.</p>
+                <p>И исполняются все мечты.</p>
+                <p>С наилучшими пожеланиями!</p>
+
+            </div>
+        </div>
+        <div class="postcard-bottom">
+            <p>С Новым годом!</p>
+            <p>Пусть этот волшебный праздник, окутанный ароматом ели и мерцанием огней, ворвется в ваш дом с вихрем радости и надежд! </p>
+            <p>Вот и подходит к концу еще один год…</p>
+            <p>Время, когда мы оглядываемся назад, вспоминая все, что было: и радостные моменты, согревающие душу, и трудности, которые сделали нас сильнее. </p>
+
+            <p>
+
+            </p>
+
+            <p>И вот, с трепетом в сердце, мы переступаем порог нового, неизведанного года.</p>
+            <p>Пусть этот переход будет для вас символом новых начинаний, свежих возможностей и веры в лучшее.</p>
+
+            <p>
+
+            </p>
+
+            <p>От всей души желаю, чтобы наступающий год распахнул перед вами двери к новым горизонтам, полным удивительных открытий и перспектив. </p>
+            <p>Пусть крепкое здоровье будет вашим верным спутником на протяжении всего года, оберегая от невзгод и даруя силы для свершений.</p>
+            <p>Пусть каждый день будет наполнен маленькими и большими радостями, яркими улыбками и моментами истинного счастья, которые будут согревать вас даже в самые пасмурные дни.</p>
+            <p>
+
+            </p>
+            <p>Желаю, чтобы ваши самые смелые мечты и сокровенные желания обрели реальность, как по волшебству.</p>
+            <p>Пусть на пути к целям вас сопровождает удача, а упорство и целеустремленность приведут к заслуженным победам.</p>
+            <p>Пусть рядом всегда будут дорогие сердцу люди, готовые разделить с вами и радость побед, и горечь неудач.</p>
+            <p>Цените эти связи, ведь именно они делают нашу жизнь богаче и полнее.</p>
+
+            <p>
+
+            </p>
+
+            <p>Пусть Новый год откроет перед вами двери к новым знаниям, интересным проектам и смелым мечтам. </p>
+            <p> Не бойтесь ставить перед собой высокие цели и стремиться к их достижению! </p>
+            <p>Пусть вдохновение станет вашим постоянным спутником, а креативные идеи бьют ключом. </p>
+            <p>
+
+            </p>
+            <p>Желаю, чтобы в вашем доме царили мир и согласие, а в душе - спокойствие и гармония. </p>
+            <p> Пусть каждый рассвет нового года приносит с собой новые надежды, а каждый закат дарит умиротворение и благодарность за прожитый день. </p>
+            <p>
+
+            </p>
+            <p>И пусть наступающий год станет для вас годом реализации самых смелых планов, годом любви, вдохновения и незабываемых впечатлений! </p>
+            <p> С Новым годом!</p>
+
+        </div>
+    </div>
+
+    <audio id="music" src="Wham_-_Last_Christmas.mp3"></audio>
+
+    <script>
+        const postcardTop = document.getElementById('postcardTop');
+        const postcardContainer = document.querySelector('.postcard-container');
+        const music = document.getElementById('music');
+        let isOpen = false;
+
+        postcardTop.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                postcardTop.classList.remove('closed');
+                postcardTop.classList.add('open');
+                postcardContainer.classList.add('open');
+                music.play();
+            } else {
+                postcardTop.classList.remove('open');
+                postcardTop.classList.add('closed');
+                postcardContainer.classList.remove('open');
+                music.pause();
+                music.currentTime = 0;
+            }
+        });
+    </script>
+</body>
+</html>
